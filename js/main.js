@@ -2,7 +2,7 @@
 const COLORS = {
     '1': 'white',
     '-1': 'pink',
-    'null': '',
+    'null': 'transparent',
 };
 
 const winningCombos = [
