@@ -36,21 +36,21 @@ function handleTurn(event) {
     var squareNum = parseInt(event.target.id.replace('square', ''));
     if (board[squareNum] || winner) return;
     board[squareNum] = turn;
-    turn *= -1;
+    turn = turn * -1;
     winner = getWinner();
     render();
 }
 
 function getWinner(){
     for (var i = 0; i < winningCombos.length; i++) {
-        if (board[0]+ board[1]+ board[2] === 3 || board[0]+ board[1]+ board[2] === -3) return board[0];
-        if (board[3]+ board[4]+ board[5] === 3 || board[3]+ board[4]+ board[5] === -3) return board[0];
-        if (board[6]+ board[7]+ board[8] === 3 || board[6]+ board[7]+ board[8] === -3) return board[0];
-        if (board[0]+ board[3]+ board[6] === 3 || board[0]+ board[3]+ board[6] === -3) return board[0];
-        if (board[1]+ board[4]+ board[7] === 3 || board[1]+ board[4]+ board[7] === -3) return board[0];
-        if (board[2]+ board[5]+ board[8] === 3 || board[2]+ board[5]+ board[8] === -3) return board[0];
-        if (board[0]+ board[4]+ board[8] === 3 || board[0]+ board[4]+ board[8] === -3) return board[0];
-        if (board[0]+ board[4]+ board[6] === 3 || board[0]+ board[4]+ board[6] === -3) return board[0];
+        if (board[0]+ board[1]+ board[2] === 3 || board[0]+ board[1]+ board[2] === -3) return board;
+        if (board[3]+ board[4]+ board[5] === 3 || board[3]+ board[4]+ board[5] === -3) return board;
+        if (board[6]+ board[7]+ board[8] === 3 || board[6]+ board[7]+ board[8] === -3) return board;
+        if (board[0]+ board[3]+ board[6] === 3 || board[0]+ board[3]+ board[6] === -3) return board;
+        if (board[1]+ board[4]+ board[7] === 3 || board[1]+ board[4]+ board[7] === -3) return board;
+        if (board[2]+ board[5]+ board[8] === 3 || board[2]+ board[5]+ board[8] === -3) return board;
+        if (board[0]+ board[4]+ board[8] === 3 || board[0]+ board[4]+ board[8] === -3) return board;
+        if (board[0]+ board[4]+ board[6] === 3 || board[0]+ board[4]+ board[6] === -3) return board;
       }
       if (board.includes(null)) return null;
       return 'T';
